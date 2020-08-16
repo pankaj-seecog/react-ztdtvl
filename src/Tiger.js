@@ -19,7 +19,8 @@ console.log('&& ',startRecord,pageSize,lastrecord)
 const tableCalData = ()=>{
   console.log('First')
   let tmp = users;
-tmp.splice(startRecord-1,lastrecord-1);
+tmp=tmp.splice(startRecord-1,pageSize);
+console.log('tmp is ',tmp)
 tableData(tmp)
 }
 

@@ -9,7 +9,7 @@ export default function App() {
     <div>
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen :)</p>
-      <Pagination record={usersList} pageSize="3"/>
+      <Pagination record={usersList} pageSize="3" setTable={setTableData}/>
 <table>
 <th>Id</th><th>Name</th><th>Email</th>
 {

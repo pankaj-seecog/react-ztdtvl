@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import "./style.css";
 import Tiger from './Tiger'
 import usersData from './data'
-const Pagination = ({record,pageSize})=>{
+const Pagination = ({record,pageSize,setTable})=>{
   
   const [users,setUsers] = useState(record);
   const [currentPage,setCurrentPage] = useState(0);
@@ -14,7 +14,8 @@ setCurrentPage(currentPage);
 }
 
 const selectTableRecord = (arr)=>{
-console.log('The table data isn ',arr)
+console.log('The table data isn ==> ',arr)
+// setTable();
 }
 
   return (
