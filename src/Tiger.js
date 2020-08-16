@@ -19,9 +19,10 @@ console.log('&& ',startRecord,pageSize,lastrecord)
 const tableCalData = ()=>{
   console.log('First')
   let tmp = users;
+  console.log("*** ",startRecord-1,pageSize)
 tmp=tmp.splice(startRecord-1,pageSize);
 console.log('tmp is ',tmp)
-tableData(tmp)
+// tableData(tmp)
 }
 
   return (
@@ -29,13 +30,17 @@ tableData(tmp)
 <div>
 Total page length : {calPageSize} | {currentPage} <br/>
 page {startRecord} to {lastrecord} from {users.length} &nbsp;
-<button disabled={currentPage==0} onClick={()=>{
-  tableCalData();
+{/* disabled={currentPage==0} */}
+<button  onClick={()=>{
+ 
   setPage(currentPage-1)
+   tableCalData();
 }}>Pre</button> | &nbsp;
-<button disabled={calPageSize==currentPage} onClick={()=>{
-  tableCalData();
+{/*. disabled={calPageSize==currentPage}*/}
+<button  onClick={()=>{
+  
   setPage(currentPage+1)
+  tableCalData();
 }}>Next</button>
 </div>
   )
