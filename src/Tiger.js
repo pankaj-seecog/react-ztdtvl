@@ -1,12 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 
 const Tiger = ({users,currentPage,pageSize,setPage,tableData})=>{
   console.log('-->',users)
-  console.log('::',currentPage,pageSize)
+  console.log('::',currentPage,pageSize-1)
    //start logic start-end
 let startRecord = currentPage*pageSize+1;
-
 let lastrecord = (startRecord + pageSize)-1;
 console.log('&& ',startRecord,pageSize,lastrecord)
     //end logic
@@ -25,6 +24,11 @@ console.log('tmp is ',tmp)
 // tableData(tmp)
 }
 
+const customSetpage = (x)=>{
+// startRecord = currentPage*pageSize+1;
+setPage(x);
+}
+
   return (
  
 <div>
@@ -33,13 +37,13 @@ page {startRecord} to {lastrecord} from {users.length} &nbsp;
 {/* disabled={currentPage==0} */}
 <button  onClick={()=>{
  
-  setPage(currentPage-1)
+  customSetpage(currentPage-1)
    tableCalData();
 }}>Pre</button> | &nbsp;
 {/*. disabled={calPageSize==currentPage}*/}
 <button  onClick={()=>{
   
-  setPage(currentPage+1)
+  customSetpage(currentPage+1)
   tableCalData();
 }}>Next</button>
 </div>
